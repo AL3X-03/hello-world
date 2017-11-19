@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            #omino {
+                color: rgb(95, 32, 212);
+                position: absolute;
+                left: 100px;
+                top: 100px;
+                font-size: 50px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <img src="giphy.gif" width="100px" id="omino">0</img>
+        <button id="button">click me</button>
+        <a href="http://google.com">Vai su Google</a>
+
+        <script>
+            var button = document.getElementById("button");
+            document.onkeydown = function(event) {
+                console.log(event.keyCode)
+                var x = document.getElementById("omino").getBoundingClientRect().left;
+                if (event.keyCode === 39) {
+                    x += 3;
+                }
+
+                if (event.keyCode === 37) {
+                    x -= 3;
+                }
+
+                
+                var y = document.getElementById("omino").getBoundingClientRect().top;
+                if (event.keyCode === 40) {
+                   y += 3
+                }
+
+                if (event.keyCode === 38) {
+                    y -=3
+                }
+
+                document.getElementById("omino").setAttribute("style", "left: " + x + "px;" + "top: " + y + "px;");
+            };
+
+        </script>
+    </body>
+</html>
